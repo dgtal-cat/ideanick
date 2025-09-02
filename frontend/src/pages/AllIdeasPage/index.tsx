@@ -4,11 +4,11 @@ export const AllIdeasPage = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getIdeas.useQuery()
 
   if (isLoading || isFetching) {
-    return <span>Loading...</span>
+    return <div className="loader">Loading...</div>
   }
 
   if (isError) {
-    return <span>Error: {error.message}</span>
+    return <div className="error-block">Error: {error.message}</div>
   }
 
   return (
