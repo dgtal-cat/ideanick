@@ -5,5 +5,14 @@
   "workspaces": [
     "backend",
     "frontend"
-  ]
+  ],
+  "scripts": {
+    "b": "npm run --workspace backend",
+    "f": "npm run --workspace frontend",
+    "types": "concurrently \"npm run --workspace backend types\" \"npm run --workspace frontend types\"",
+    "prettify": "npm run --workspace backend prettify && npm run --workspace frontend prettify"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
